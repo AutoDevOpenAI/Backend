@@ -35,7 +35,7 @@ def authenticate():
         return jsonify(error=str(e)), 400
 
 
-@app.route('/run_query',methods = ['GET'])
+@app.route('run_query',methods = ['GET'])
 def run_query():
     query = request.json.get('query')
     cloudformation = boto3.client(
@@ -45,6 +45,9 @@ def run_query():
     )
 
     #run query into gpt, get actual query we want, in terms of stack_name and template_body
+
+
+    gpt_res = query
 
     stack_name = request.json.get('stack_name')
     template_body = request.json.get('template_body')  # JSON or YAML formatted string

@@ -1,0 +1,14 @@
+
+Resources:
+  TestBucketNihalisGreat:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: test-bucket-nihalisgreat
+      AccessControl: Private
+      VersioningConfiguration:
+        Status: Enabled
+    DeletionPolicy: Retain
+
+Outputs:
+  TestBucketName:
+    Value: !Ref TestBucketNihalisGreat
