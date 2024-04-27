@@ -15,11 +15,13 @@ subscription_id = "08c87e2a-61cf-43ec-bce5-6312d648f88a"
 resource_group_name = "AutoDev"
 location = "westus2"
 
-credential = ClientSecretCredential(client_id="3173bcd6-ef08-478e-b883-822f707f23d0",
+credential = ClientSecretCredential(client_id="768a5199-a38f-4630-b5d1-e3f0bb604b05",
                                     tenant_id="2cdd854f-3936-41b0-a9c1-70b6e605cf08",
-                                    client_secret="pYP8Q~ONWB0T1pJYivl6gKZPnoHOFbUarX4SyaA-"
+                                    client_secret="1Lz8Q~ZDNARmWFiFE2AJPEpLayisGYq1vKYfEc.1"
                                     )
+
 resource_client = ResourceManagementClient(credential, subscription_id)
 
-for resource_group in resource_client.resource_groups.list():
-    print(resource_group.name)
+print([i for i in resource_client.resource_groups.list()])
+# for resource_group in resource_client.resource_groups.list():
+#     print(resource_group.name)
